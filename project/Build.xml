@@ -1,0 +1,15 @@
+<xml>
+  <files id="haxe">
+    <file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSToast.h" />
+		<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSToast.mm" />
+		
+		<file name="${haxelib:IOSTools}/dependencies/iostools/Storage/IOSPrefs.h" />
+		<file name="${haxelib:IOSTools}/dependencies/iostools/Storage/IOSPrefs.mm" />
+		
+		<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSAlarms.h" />
+		<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSAlarms.mm" />
+		
+		<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSPermissions.h" />
+		<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSPermissions.mm" />
+  </files>
+</xml>
