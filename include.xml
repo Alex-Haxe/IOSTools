@@ -6,8 +6,6 @@
         <dependency name="UIKit.framework" type="framework" />
         <dependency name="Foundation.framework" type="framework" />
 
-        <ios plist="NSCameraUsageDescription" value="This app requires camera access to function properly." />
-        
         <source path="dependencies/iostools/UI" />
         <source path="dependencies/iostools/Storage" />
         <source path="dependencies/iostools/Management" />
