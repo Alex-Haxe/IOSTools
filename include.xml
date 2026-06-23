@@ -5,11 +5,5 @@
         <dependency name="AVFoundation.framework" type="framework" />
         <dependency name="UIKit.framework" type="framework" />
         <dependency name="Foundation.framework" type="framework" />
-
-        <source path="dependencies/iostools/UI" />
-        <source path="dependencies/iostools/Storage" />
-        <source path="dependencies/iostools/Management" />
     </section>
-
-    <classpath name="" />
 </project>
