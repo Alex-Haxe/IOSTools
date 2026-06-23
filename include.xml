@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<project>
-    <section if="ios">
-        <dependency name="UserNotifications.framework" type="framework" />
-        <dependency name="AVFoundation.framework" type="framework" />
-        <dependency name="UIKit.framework" type="framework" />
-        <dependency name="Foundation.framework" type="framework" />
-    </section>
-</project>
