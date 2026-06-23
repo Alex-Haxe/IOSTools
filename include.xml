@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <meta title="iostools" version="1.0.0" company="Extension" />
+
+    <section if="ios">
+        <dependency name="UserNotifications.framework" type="framework" />
+        <dependency name="AVFoundation.framework" type="framework" />
+        <dependency name="UIKit.framework" type="framework" />
+        <dependency name="Foundation.framework" type="framework" />
+
+        <ndll name="iostools" />
+        
+        <ios plist="NSCameraUsageDescription" value="This app requires camera access to function properly." />
+        
+        <source path="dependencies/iostools/UI" />
+        <source path="dependencies/iostools/Storage" />
+        <source path="dependencies/iostools/Management" />
+    </section>
+
+    <classpath name="" />
+</project>

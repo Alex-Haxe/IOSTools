@@ -1,0 +1,15 @@
+{
+	"name": "IOSTools",
+	"url": "https://github.com/ChanceXML/IOSTools",
+	"license": "MIT",
+	"tags": [
+		"ios"
+	],
+	"description": "Extension made to use ios functions more easily",
+	"version": "0.1.0",
+	"releasenote": "none",
+	"contributors": [
+		"ChanceXML"
+	],
+	"dependencies": {}
+}
