@@ -6,8 +6,6 @@
         <dependency name="UIKit.framework" type="framework" />
         <dependency name="Foundation.framework" type="framework" />
 
-        <ndll name="iostools" />
-        
         <ios plist="NSCameraUsageDescription" value="This app requires camera access to function properly." />
         
         <source path="dependencies/iostools/UI" />
