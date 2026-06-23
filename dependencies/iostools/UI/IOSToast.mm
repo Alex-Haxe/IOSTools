@@ -33,7 +33,7 @@
             [label.bottomAnchor constraintEqualToAnchor:toastView.bottomAnchor constant:-10],
             
             [toastView.centerXAnchor constraintEqualToAnchor:rootVC.view.centerXAnchor],
-            [toastView.bottomAnchor constraintEqualToAnchor:rootVC.view.safeAreaLayoutGuideBottomAnchor constant:-60],
+            [toastView.bottomAnchor constraintEqualToAnchor:rootVC.view.safeAreaLayoutGuide.bottomAnchor constant:-60],
             [toastView.widthAnchor constraintLessThanOrEqualToAnchor:rootVC.view.widthAnchor constant:-40]
         ]];
         
