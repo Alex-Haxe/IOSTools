@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-    <meta title="iostools" version="1.0.0" company="Extension" />
-
     <section if="ios">
         <dependency name="UserNotifications.framework" type="framework" />
         <dependency name="AVFoundation.framework" type="framework" />
