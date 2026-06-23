@@ -4,6 +4,7 @@ package iostools.storage;
 import cpp.Lib;
 #end
 
+@:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class Prefs {
     #if ios
     private static var iostools_storage_save_string = Lib.load("iostools", "iostools_storage_save_string", 2);
