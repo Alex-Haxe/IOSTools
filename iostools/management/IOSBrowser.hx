@@ -1,4 +1,4 @@
-package;
+package iostools.management;
 
 #if cpp
 import cpp.Prime;
