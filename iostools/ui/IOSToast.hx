@@ -5,7 +5,7 @@ import cpp.Lib;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class Toast {
+class IOSToast {
     #if ios
     private static var iostools_ui_show_toast = Lib.load("iostools", "iostools_ui_show_toast", 1);
     #end
