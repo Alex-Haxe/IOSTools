@@ -5,7 +5,7 @@ import cpp.Lib;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class Permissions {
+class IOSPermissions {
     #if ios
     private static var iostools_management_check_camera = Lib.load("iostools", "iostools_management_check_camera", 0);
     private static var iostools_management_request_camera = Lib.load("iostools", "iostools_management_request_camera", 0);
