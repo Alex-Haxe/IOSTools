@@ -3,7 +3,7 @@ package iostools.haptics;
 #if cpp
 import cpp.Prime;
 #end
-
+ 
 class IOSHaptics {
 
     #if ios
