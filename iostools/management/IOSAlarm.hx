@@ -5,7 +5,7 @@ import cpp.Lib;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class Alarms {
+class IOSAlarm {
     #if ios
     private static var iostools_management_set_alarm = Lib.load("iostools", "iostools_management_set_alarm", 4);
     private static var iostools_management_cancel_alarms = Lib.load("iostools", "iostools_management_cancel_alarms", 0);
