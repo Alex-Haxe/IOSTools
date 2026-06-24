@@ -15,7 +15,7 @@ class IOSPermissions {
     private static var iostools_management_request_files = Lib.load("iostools", "iostools_management_request_files", 0);
     #end
 
-    public static function checkCamera():Int {
+    public static function checkCameraPermission():Int {
         #if ios
         return iostools_management_check_camera();
         #else
@@ -23,13 +23,13 @@ class IOSPermissions {
         #end
     }
 
-    public static function requestCamera():Void {
+    public static function requestCameraPermission():Void {
         #if ios
         iostools_management_request_camera();
         #end
     }
 
-    public static function checkNotifications():Int {
+    public static function checkNotificationsPermission():Int {
         #if ios
         return iostools_management_check_notifications();
         #else
@@ -37,13 +37,13 @@ class IOSPermissions {
         #end
     }
 
-    public static function requestNotifications():Void {
+    public static function requestNotificationsPermission():Void {
         #if ios
         iostools_management_request_notifications();
         #end
     }
 
-    public static function checkFiles():Int {
+    public static function checkFilesPermission():Int {
         #if ios
         return iostools_management_check_files();
         #else
@@ -51,7 +51,7 @@ class IOSPermissions {
         #end
     }
 
-    public static function requestFiles():Void {
+    public static function requestFilesPermission():Void {
         #if ios
         iostools_management_request_files();
         #end
