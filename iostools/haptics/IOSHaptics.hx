@@ -3,7 +3,8 @@ package iostools.haptics;
 #if cpp
 import cpp.Prime;
 #end
- 
+
+@:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class IOSHaptics {
 
     #if ios

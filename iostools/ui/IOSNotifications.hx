@@ -4,6 +4,7 @@ package iostools.ui;
 import cpp.Prime;
 #end
 
+@:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class IOSNotifications {
 
     #if ios

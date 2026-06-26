@@ -7,6 +7,7 @@ import cpp.Prime;
  * When called on an iOS device, it instantly sends the link to open Safari.
  * Example: IOSBrowser.open("https://github.com");
 */
+@:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class IOSBrowser {
 
     #if ios
