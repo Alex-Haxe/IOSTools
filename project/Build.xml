@@ -2,6 +2,7 @@
   <files id="haxe">
 	<!-- ui -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSAlarms.mm" />
+	  <file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSAlert.mm" />
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSToast.mm" />
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSNotifications.mm" />
 	  
