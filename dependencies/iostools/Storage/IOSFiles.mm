@@ -1,14 +1,14 @@
 #import <UIKit/UIKit.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #include <hx/CFFI.h>
-#include "IOSFilePicker.h"
+#include "IOSFiles.h"
 
-@interface PickerDelegateHandler : NSObject <UIDocumentPickerDelegate>
+@interface FilesDelegateHandler : NSObject <UIDocumentPickerDelegate>
 @property (nonatomic) AutoGCRoot* successCallback;
 @property (nonatomic) AutoGCRoot* cancelCallback;
 @end
 
-@implementation PickerDelegateHandler
+@implementation FilesDelegateHandler
 
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     NSURL *url = urls.firstObject;
@@ -24,12 +24,12 @@
 }
 @end
 
-namespace ios_file_picker {
-    static PickerDelegateHandler* delegateInstance = nil;
+namespace ios_files {
+    static FilesDelegateHandler* delegateInstance = nil;
 
     void init_callbacks(value on_success, value on_cancel) {
         if (!delegateInstance) {
-            delegateInstance = [[PickerDelegateHandler alloc] init];
+            delegateInstance = [[FilesDelegateHandler alloc] init];
         }
         delegateInstance.successCallback = new AutoGCRoot(on_success);
         delegateInstance.cancelCallback = new AutoGCRoot(on_cancel);
@@ -70,22 +70,22 @@ namespace ios_file_picker {
     }
 }
 
-extern "C" void ios_file_picker_init(value on_success, value on_cancel) {
-    ios_file_picker::init_callbacks(on_success, on_cancel);
+extern "C" void ios_files_init(value on_success, value on_cancel) {
+    ios_files::init_callbacks(on_success, on_cancel);
 }
-val_prime2(ios_file_picker_init);
+val_prime2(ios_files_init);
 
-extern "C" void ios_file_picker_pick_file() {
-    ios_file_picker::pick_file();
+extern "C" void ios_files_pick_file() {
+    ios_files::pick_file();
 }
-val_prime0(ios_file_picker_pick_file);
+val_prime0(ios_files_pick_file);
 
-extern "C" void ios_file_picker_pick_folder() {
-    ios_file_picker::pick_folder();
+extern "C" void ios_files_pick_folder() {
+    ios_files::pick_folder();
 }
-val_prime0(ios_file_picker_pick_folder);
+val_prime0(ios_files_pick_folder);
 
-extern "C" void ios_file_picker_save(value name, value data) {
-    ios_file_picker::save_file(val_string(name), val_string(data));
+extern "C" void ios_files_save(value name, value data) {
+    ios_files::save_file(val_string(name), val_string(data));
 }
-val_prime2(ios_file_picker_save);
+val_prime2(ios_files_save);
