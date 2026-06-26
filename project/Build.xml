@@ -1,11 +1,19 @@
 <xml>
   <files id="haxe">
-	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSToast.mm" />
-		
-	<file name="${haxelib:IOSTools}/dependencies/iostools/Storage/IOSPrefs.mm" />
-		
+	<!-- ui -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSAlarms.mm" />
-		
+	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSToast.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSNotifications.mm" />
+	  
+	<!-- storage -->
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Storage/IOSPrefs.mm" />
+
+	<!-- management -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSPermissions.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSBrowser.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSClipboard.mm" />
+
+	<!-- haptics -->
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Haptics/IOSHaptics.mm" />
   </files>
 </xml>
