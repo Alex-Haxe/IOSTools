@@ -13,13 +13,13 @@
 - (void)documentPicker:(UIDocumentPickerViewController *)controller didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls {
     NSURL *url = urls.firstObject;
     if (url && self.successCallback) {
-        val_ July_call1(self.successCallback->get(), alloc_string([url.path UTF8String]));
+        val_call1(self.successCallback->get(), alloc_string([url.path UTF8String]));
     }
 }
 
 - (void)documentPickerWasCancelled:(UIDocumentPickerViewController *)controller {
     if (self.cancelCallback) {
-        val_ July_call0(self.cancelCallback->get());
+        val_call0(self.cancelCallback->get());
     }
 }
 @end
