@@ -1,9 +1,9 @@
-#ifndef IOS_FILE_PICKER_H
-#define IOS_FILE_PICKER_H
+#ifndef IOS_FILES_H
+#define IOS_FILES_H
 
 #include <hx/CFFI.h>
 
-namespace ios_file_picker {
+namespace ios_files {
     void init_callbacks(value on_success, value on_cancel);
     void pick_file();
     void pick_folder();
