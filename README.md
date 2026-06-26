@@ -3,7 +3,7 @@
 
 ---
 
-A simple, modular iOS utility library for haxelib designed to make native iOS development feel easy—similar to `extension-androidtools`. 
+A simple, modular iOS utility library for haxelib/haxeflixel designed to make native iOS development feel easy—similar to `extension-androidtools`. 
 
 It allows you to request permissions, pop up system alerts, and more!
 ---
