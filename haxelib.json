@@ -9,7 +9,8 @@
 	"version": "0.1.1",
 	"releasenote": "none",
 	"contributors": [
-		"ChanceXML"
+		"ChanceXML",
+		"Misthx"
 	],
 	"dependencies": {}
 }
