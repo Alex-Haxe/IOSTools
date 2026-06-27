@@ -31,9 +31,9 @@ namespace ios_haptics {
 extern "C" void ios_haptics_trigger_impact(value type) {
     ios_haptics::trigger_impact(val_int(type));
 }
-val_prime1(ios_haptics_trigger_impact);
+DEFINE_PRIME1(ios_haptics_trigger_impact);
 
 extern "C" void ios_haptics_trigger_notification(value type) {
     ios_haptics::trigger_notification(val_int(type));
 }
-val_prime1(ios_haptics_trigger_notification);
+DEFINE_PRIME1(ios_haptics_trigger_notification);
