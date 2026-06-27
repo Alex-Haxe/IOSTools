@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 #include <hx/CFFI.h>
+#include <hx/CFFIPrime.h>
 #include "IOSHaptics.h"
 
 namespace ios_haptics {
@@ -28,12 +29,12 @@ namespace ios_haptics {
     }
 }
 
-extern "C" void ios_haptics_trigger_impact(value type) {
-    ios_haptics::trigger_impact(val_int(type));
+extern "C" void ios_haptics_trigger_impact(int type) {
+    ios_haptics::trigger_impact(type);
 }
 DEFINE_PRIME1(ios_haptics_trigger_impact);
 
-extern "C" void ios_haptics_trigger_notification(value type) {
-    ios_haptics::trigger_notification(val_int(type));
+extern "C" void ios_haptics_trigger_notification(int type) {
+    ios_haptics::trigger_notification(type);
 }
 DEFINE_PRIME1(ios_haptics_trigger_notification);
