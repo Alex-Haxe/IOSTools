@@ -8,6 +8,7 @@
 	  
 	<!-- storage -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/Storage/IOSPrefs.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Storage/IOSFiles.mm" />
 
 	<!-- management -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSPermissions.mm" />
