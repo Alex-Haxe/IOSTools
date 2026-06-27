@@ -1,18 +1,16 @@
 package iostools.storage;
 
 #if cpp
-import cpp.Prime;
+import cpp.Lib;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class IOSFiles {
     #if ios
-    private static var ios_files_init = Prime.load("iosfiles", "ios_files_init", "ooo", false);
-    
-    private static var ios_files_pick_file = Prime.load("iosfiles", "ios_files_pick_file", "v", false);
-    private static var ios_files_pick_folder = Prime.load("iosfiles", "ios_files_pick_folder", "v", false);
-    
-    private static var ios_files_save = Prime.load("iosfiles", "ios_files_save", "voo", false);
+    private static var ios_files_init = Lib.load("iosfiles", "ios_files_init", 2);
+    private static var ios_files_pick_file = Lib.load("iosfiles", "ios_files_pick_file", 0);
+    private static var ios_files_pick_folder = Lib.load("iosfiles", "ios_files_pick_folder", 0);
+    private static var ios_files_save = Lib.load("iosfiles", "ios_files_save", 2);
     #end
 
     public static function setup(onSuccess:String->Void, onCancel:Void->Void):Void {
