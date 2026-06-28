@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#include <hx/CFFI.h>
+#include <hx/CFFIPrime.h>
 #include "IOSClipboard.h"
 
 namespace ios_clipboard {
