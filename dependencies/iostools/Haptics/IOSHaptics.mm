@@ -29,12 +29,14 @@ namespace ios_haptics {
     }
 }
 
-extern "C" void ios_haptics_trigger_impact(int type) {
+extern "C" int ios_haptics_trigger_impact(int type) {
     ios_haptics::trigger_impact(type);
+    return 0;
 }
 DEFINE_PRIME1(ios_haptics_trigger_impact);
 
-extern "C" void ios_haptics_trigger_notification(int type) {
+extern "C" int ios_haptics_trigger_notification(int type) {
     ios_haptics::trigger_notification(type);
+    return 0;
 }
 DEFINE_PRIME1(ios_haptics_trigger_notification);
