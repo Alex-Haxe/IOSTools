@@ -8,8 +8,8 @@ import cpp.Prime;
 class IOSHaptics {
 
     #if ios
-    private static var ios_haptics_trigger_impact = Prime.load("ioshaptics", "ios_haptics_trigger_impact", "iv", false);
-    private static var ios_haptics_trigger_notification = Prime.load("ioshaptics", "ios_haptics_trigger_notification", "iv", false);
+    private static var ios_haptics_trigger_impact = Prime.load("ioshaptics", "ios_haptics_trigger_impact", "ii", false);
+    private static var ios_haptics_trigger_notification = Prime.load("ioshaptics", "ios_haptics_trigger_notification", "ii", false);
     #end
 
     public static function light():Void {
