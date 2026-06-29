@@ -11,6 +11,14 @@ on:
         description: "URL (leave blank if none (base normal hxcpp))"
         required: false
         type: string
+      branch:
+        description: "Branch (ONLY IF ITS GIT)"
+        required: false
+        type: string
+      version:
+        description: "Version (ONLY IF BASE HXCPP)"
+        required: false
+        type: string
 
 jobs:
   debug:
@@ -29,11 +37,11 @@ jobs:
 
       - if: ${{ inputs.url == '' }}
         run: |
-          haxelib install hxcpp --quiet
+          haxelib install hxcpp ${{ inputs.version }} --quiet
 
       - if: ${{ inputs.url != '' }}
         run: |
-          haxelib git hxcpp ${{ inputs.url }} --quiet
+          haxelib git hxcpp ${{ inputs.url }} ${{ inputs.branch }} --quiet
 
       - run: haxelib list
 
