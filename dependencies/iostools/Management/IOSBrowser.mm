@@ -19,4 +19,4 @@ namespace ios_browser {
 extern "C" void ios_browser_open_url(value url) {
     ios_browser::open_url(val_string(url));
 }
-val_prime1(ios_browser_open_url);
+DEFINE_PRIME1(ios_browser_open_url);
