@@ -1,0 +1,69 @@
+name: debug hxcpp
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "File name"
+        required: true
+        type: string
+      url:
+        description: "URL (leave blank if none (base normal hxcpp))"
+        required: false
+        type: string
+
+jobs:
+  debug:
+    runs-on: macos-13
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: latest
+
+      - run: |
+          mkdir -p ~/haxelib
+          haxelib setup ~/haxelib
+
+      - if: ${{ inputs.url == '' }}
+        run: |
+          haxelib install hxcpp --quiet
+
+      - if: ${{ inputs.url != '' }}
+        run: |
+          haxelib git hxcpp ${{ inputs.url }} --quiet
+
+      - run: haxelib list
+
+      - run: haxelib path hxcpp || true
+
+      - run: |
+          TARGET="${{ inputs.target }}"
+
+          find ~ -type f -iname "$TARGET" 2>/dev/null | sort
+
+      - run: |
+          TARGET="${{ inputs.target }}"
+
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            printf '\n===== %s =====\n' "$file"
+            cat "$file"
+          done < <(
+            find ~ -type f -iname "$TARGET" 2>/dev/null | sort
+          )
+
+      - run: |
+          grep -R "val_prime0" ~ 2>/dev/null || true
+          grep -R "val_prime1" ~ 2>/dev/null || true
+          grep -R "DEFINE_PRIME0" ~ 2>/dev/null || true
+          grep -R "DEFINE_PRIME1" ~ 2>/dev/null || true
+
+      - run: |
+          if [ -d ~/.haxelib/hxcpp/git ]; then
+            cd ~/.haxelib/hxcpp/git
+            git rev-parse HEAD || true
+            git status || true
+          fi
