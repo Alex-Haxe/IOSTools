@@ -12,5 +12,7 @@
 		"ChanceXML",
 		"Misthx"
 	],
-	"dependencies": {}
+	"dependencies": {
+		"hxcpp": ""
+	}
 }
