@@ -30,9 +30,9 @@ namespace ios_clipboard {
 extern "C" void ios_clipboard_set_text(value text) {
     ios_clipboard::set_text(val_string(text));
 }
-val_prime1(ios_clipboard_set_text);
+DEFINE_PRIME1(ios_clipboard_set_text);
 
 extern "C" value ios_clipboard_get_text() {
     return alloc_string(ios_clipboard::get_text());
 }
-val_prime0(ios_clipboard_get_text);
+DEFINE_PRIME0(ios_clipboard_get_text);
