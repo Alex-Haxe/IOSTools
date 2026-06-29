@@ -1,51 +1,43 @@
-name: Merge Commits
+name: Merge Multiple Commits
 
 on:
   workflow_dispatch:
     inputs:
-      source_commit:
-        description: "SHA of the commit to merge FROM"
+      target_branch:
+        description: 'Branch to merge into and push'
         required: true
         type: string
-
       target_commit:
-        description: "SHA of the commit to merge INTO"
+        description: 'Target base commit SHA'
         required: true
         type: string
-
-      branch:
-        description: "Branch to apply merge on"
+      source_commits:
+        description: 'Space-separated list of SHAs to merge'
         required: true
-        default: "main"
         type: string
-
       commit_message:
-        description: "Custom merge commit message"
+        description: 'Custom message prefix for the merges'
         required: true
         type: string
 
 jobs:
   merge:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ inputs.branch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - run: |
-          git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@://github.com"
 
       - run: |
-          git reset --hard "${{ inputs.target_commit }}"
-
-      - run: |
-          git merge "${{ inputs.source_commit }}" -m "${{ inputs.commit_message }}"
-
-      - run: |
-          git push origin "${{ inputs.branch }}"
+          git checkout -B "${{ github.event.inputs.target_branch }}" "${{ github.event.inputs.target_commit }}"
+          
+          for commit in ${{ github.event.inputs.source_commits }}; do
+            git merge "$commit" -m "${{ github.event.inputs.commit_message }} - Merging $commit" --no-ff
+          done
+          
+          git push origin "${{ github.event.inputs.target_branch }}"
