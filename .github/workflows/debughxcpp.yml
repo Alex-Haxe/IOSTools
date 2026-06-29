@@ -14,7 +14,7 @@ on:
 
 jobs:
   debug:
-    runs-on: macos-13
+    runs-on: macos-lat
 
     steps:
       - uses: actions/checkout@v4
