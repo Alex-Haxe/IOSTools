@@ -1,0 +1,36 @@
+name: Merge Commits
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_commit:
+        description: 'SHA of the commit to merge from'
+        required: true
+        type: string
+      target_commit:
+        description: 'SHA of the commit to merge into'
+        required: true
+        type: string
+      commit_message:
+        description: 'Custom message for the merge commit'
+        required: true
+        type: string
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@://github.com"
+
+      - run: |
+          git checkout ${{ github.event.inputs.target_commit }}
+          git merge ${{ github.event.inputs.source_commit }} -m "${{ github.event.inputs.commit_message }}"
+          git push origin HEAD:${{ github.ref }}
+          
