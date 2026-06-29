@@ -1,22 +1,22 @@
-name: Merge Multiple Commits
+name: Range Merge Commits
 
 on:
   workflow_dispatch:
     inputs:
       target_branch:
-        description: 'Branch to merge into and push'
+        description: 'Branch to merge into'
         required: true
         type: string
-      target_commit:
-        description: 'Target base commit SHA'
+      oldest_commit:
+        description: 'Starting commit SHA (exclusive boundary)'
         required: true
         type: string
-      source_commits:
-        description: 'Space-separated list of SHAs to merge'
+      newest_commit:
+        description: 'Ending commit SHA (inclusive boundary)'
         required: true
         type: string
       commit_message:
-        description: 'Custom message prefix for the merges'
+        description: 'Base message for the final merge'
         required: true
         type: string
 
@@ -34,10 +34,13 @@ jobs:
           git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@://github.com"
 
       - run: |
-          git checkout -B "${{ github.event.inputs.target_branch }}" "${{ github.event.inputs.target_commit }}"
+          git checkout "${{ github.event.inputs.target_branch }}"
           
-          for commit in ${{ github.event.inputs.source_commits }}; do
-            git merge "$commit" -m "${{ github.event.inputs.commit_message }} - Merging $commit" --no-ff
+          COMMITS=$(git rev-list --reverse "${{ github.event.inputs.oldest_commit }}..${{ github.event.inputs.newest_commit }}")
+          
+          for commit in $COMMITS; do
+            git merge "$commit" -m "${{ github.event.inputs.commit_message }} - Step: $commit" --no-ff
           done
           
           git push origin "${{ github.event.inputs.target_branch }}"
+          
