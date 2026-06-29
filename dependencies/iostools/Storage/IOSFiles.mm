@@ -73,19 +73,19 @@ namespace ios_files {
 extern "C" void ios_files_init(value on_success, value on_cancel) {
     ios_files::init_callbacks(on_success, on_cancel);
 }
-val_prime2(ios_files_init);
+DEFINE_PRIME2(ios_files_init);
 
 extern "C" void ios_files_pick_file() {
     ios_files::pick_file();
 }
-val_prime0(ios_files_pick_file);
+DEFINE_PRIME0(ios_files_pick_file);
 
 extern "C" void ios_files_pick_folder() {
     ios_files::pick_folder();
 }
-val_prime0(ios_files_pick_folder);
+DEFINE_PRIME0(ios_files_pick_folder);
 
 extern "C" void ios_files_save(value name, value data) {
     ios_files::save_file(val_string(name), val_string(data));
 }
-val_prime2(ios_files_save);
+DEFINE_PRIME2(ios_files_save);
