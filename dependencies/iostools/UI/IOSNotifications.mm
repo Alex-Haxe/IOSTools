@@ -36,9 +36,9 @@ namespace ios_notifications {
 extern "C" void ios_notifications_request_permission() {
     ios_notifications::request_permission();
 }
-DEFINE_PRIME1(ios_notifications_request_permission);
+DEFINE_PRIME0(ios_notifications_request_permission);
 
 extern "C" void ios_notifications_send_notification(value title, value body) {
     ios_notifications::send_notification(val_string(title), val_string(body));
 }
-DEFINE_PRIME1(ios_notifications_send_notification);
+DEFINE_PRIME2(ios_notifications_send_notification);
