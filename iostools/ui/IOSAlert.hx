@@ -3,8 +3,9 @@ package iostools.ui;
 #if cpp
 import cpp.Lib;
 #end
-  
+
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
+@:headerCode('#include "IOSAlert.h"')
 class IOSAlert {
     public static function show(title:String, message:String, buttonText:String):Void {
         #if ios
