@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <UserNotifications/UserNotifications.h>
 #include <hx/CFFI.h>
+#include <hx/CFFIPrime.h>
 #include "IOSNotifications.h"
 
 namespace ios_notifications {
