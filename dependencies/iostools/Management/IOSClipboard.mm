@@ -27,8 +27,9 @@ namespace ios_clipboard {
     }
 }
 
-extern "C" void ios_clipboard_set_text(value text) {
+extern "C" value ios_clipboard_set_text(value text) {
     ios_clipboard::set_text(val_string(text));
+    return alloc_null();
 }
 DEFINE_PRIME1(ios_clipboard_set_text);
 

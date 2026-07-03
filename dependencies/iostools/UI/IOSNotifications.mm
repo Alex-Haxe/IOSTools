@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <UserNotifications/UserNotifications.h>
 #include <hx/CFFI.h>
+#include <hx/CFFIPrime.h>
 #include "IOSNotifications.h"
 
 namespace ios_notifications {
@@ -32,12 +33,14 @@ namespace ios_notifications {
     }
 }
 
-extern "C" void ios_notifications_request_permission() {
+extern "C" value ios_notifications_request_permission() {
     ios_notifications::request_permission();
+    return alloc_null();
 }
-DEFINE_PRIME1(ios_notifications_request_permission);
+DEFINE_PRIME0(ios_notifications_request_permission);
 
-extern "C" void ios_notifications_send_notification(value title, value body) {
+extern "C" value ios_notifications_send_notification(value title, value body) {
     ios_notifications::send_notification(val_string(title), val_string(body));
+    return alloc_null();
 }
-DEFINE_PRIME1(ios_notifications_send_notification);
+DEFINE_PRIME2(ios_notifications_send_notification);

@@ -1,6 +1,14 @@
-#import <Foundation/Foundation.h>
+#ifndef IOS_ALERT_H
+#define IOS_ALERT_H
 
-@interface IOSAlarms : NSObject
-+ (void)setAlarm:(NSString *)id title:(NSString *)title body:(NSString *)body seconds:(double)seconds;
-+ (void)cancelAllAlarms;
+#import <UIKit/UIKit.h>
+
+@interface IOSAlertNative : NSObject
+
++ (void)showAlert:(NSString *)title
+          message:(NSString *)message
+       buttonText:(NSString *)buttonText;
+
 @end
+
+#endif
