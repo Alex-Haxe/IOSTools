@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #include <hx/CFFI.h>
 #include "IOSBrowser.h"
+#include <hx/CFFIPrime.h>
 
 namespace ios_browser {
 
