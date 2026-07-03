@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 #include <hx/CFFI.h>
+#include <hx/CFFIPrime.h>
 #include "IOSFiles.h"
 
 @interface FilesDelegateHandler : NSObject <UIDocumentPickerDelegate>
@@ -70,22 +71,26 @@ namespace ios_files {
     }
 }
 
-extern "C" void ios_files_init(value on_success, value on_cancel) {
+extern "C" value ios_files_init(value on_success, value on_cancel) {
     ios_files::init_callbacks(on_success, on_cancel);
+    return alloc_null();
 }
 DEFINE_PRIME2(ios_files_init);
 
-extern "C" void ios_files_pick_file() {
+extern "C" value ios_files_pick_file() {
     ios_files::pick_file();
+    return alloc_null();
 }
 DEFINE_PRIME0(ios_files_pick_file);
 
-extern "C" void ios_files_pick_folder() {
+extern "C" value ios_files_pick_folder() {
     ios_files::pick_folder();
+    return alloc_null();
 }
 DEFINE_PRIME0(ios_files_pick_folder);
 
-extern "C" void ios_files_save(value name, value data) {
+extern "C" value ios_files_save(value name, value data) {
     ios_files::save_file(val_string(name), val_string(data));
+    return alloc_null();
 }
 DEFINE_PRIME2(ios_files_save);
