@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="App" package="com.luaDS.myapp" version="1.0.0" company="NONE" />
+	<app main="Main" path="Export" file="app" />
+	
+	<source path="source" />
+	
+	<haxelib name="lime" />
+	<haxelib name="openfl" />
+  <haxelib name="IOSTools" />
+</project>

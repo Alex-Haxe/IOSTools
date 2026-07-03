@@ -1,0 +1,27 @@
+name: TestBuild
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - uses: krdlab/setup-haxe@master
+      with:
+        haxe-version: 4.3.4
+
+    - run: |
+        haxelib install lime --quiet --skip-dependencies
+        haxelib install openfl --quiet --skip-dependencies
+        haxelib git IOSTools https://github.com/Misthx/devIOSTools --quiet
+        
+        haxelib run lime setup
+
+    - run: haxelib run lime build ios -nosign
+    
