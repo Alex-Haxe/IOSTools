@@ -19,9 +19,9 @@ jobs:
     - run: |
         haxelib install lime --quiet --skip-dependencies
         haxelib install openfl --quiet --skip-dependencies
-        haxelib git IOSTools https://github.com/Misthx/devIOSTools
+        haxelib git IOSTools https://github.com/Misthx/devIOSTools --quiet
         
         haxelib run lime setup
 
-    - run: haxelib run lime build ios
+    - run: haxelib run lime build ios -nosign
     
