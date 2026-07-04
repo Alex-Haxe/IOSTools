@@ -1,4 +1,4 @@
-package iostools.haptics;
+package iostools;
 
 #if cpp
 import cpp.Prime;
