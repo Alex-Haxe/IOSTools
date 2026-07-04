@@ -1,0 +1,59 @@
+name: Squash Commits
+
+on:
+  workflow_dispatch:
+    inputs:
+      start_commit:
+        description: "Oldest commit to include"
+        required: true
+      end_commit:
+        description: "Newest commit to include"
+        required: true
+        default: "HEAD"
+      commit_message:
+        description: "Message for the squashed commit"
+        required: true
+        default: "Squashed commits"
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - run: |
+          set -e
+
+          BRANCH="${GITHUB_REF_NAME}"
+          START="${{ inputs.start_commit }}"
+          END="${{ inputs.end_commit }}"
+
+          git checkout "$END"
+
+          BEFORE="$(git rev-parse "${START}^")"
+
+          COAUTHORS="$(git log --format='%B' "${BEFORE}..${END}" | grep '^Co-authored-by:' | sort -u || true)"
+
+          git reset --soft "$BEFORE"
+
+          TMP_MSG="$(mktemp)"
+          printf '%s\n' "${{ inputs.commit_message }}" > "$TMP_MSG"
+
+          if [ -n "$COAUTHORS" ]; then
+            printf '\n%s\n' "$COAUTHORS" >> "$TMP_MSG"
+          fi
+
+          git commit --file="$TMP_MSG"
+
+      - run: |
+          git push --force-with-lease origin HEAD:${GITHUB_REF_NAME}
