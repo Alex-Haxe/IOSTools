@@ -4,6 +4,7 @@ package iostools.network;
 import cpp.Prime;
 #end
 
+@:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class IOSDownloader {
     #if ios
     private static var _downloadFile = Prime._prime("iostools_download_file", "vss", false);
@@ -17,8 +18,6 @@ class IOSDownloader {
     public static function downloadFile(url:String, filename:String):Void {
         #if ios
         _downloadFile(url, filename);
-        #else
-        trace("IOSDownloader: Download is only supported on iOS.");
-        #endif
+        #end
     }
 }
