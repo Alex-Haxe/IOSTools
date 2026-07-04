@@ -5,7 +5,7 @@ import lime.system.CFFI;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class IOSAlert {
+class Alert {
     #if ios
     private static var ios_show_native_alert = CFFI.load("iostools", "ios_show_native_alert", 3);
     #end
@@ -17,8 +17,6 @@ class IOSAlert {
         } catch (e:Dynamic) {
             trace("Error calling native alert: " + e);
         }
-        #else
-        trace('Mock Alert: [$title] $message');
         #end
     }
 }

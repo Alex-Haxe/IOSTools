@@ -5,7 +5,7 @@ import cpp.Prime;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class IOSHaptics {
+class Haptic {
 
     #if ios
     private static var ios_haptics_trigger_impact = Prime.load("ioshaptics", "ios_haptics_trigger_impact", "ii", false);

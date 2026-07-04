@@ -5,7 +5,7 @@ import cpp.Prime;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class IOSClipboard {
+class Clipboard {
 
     #if ios
     private static var ios_clipboard_set_text = Prime._load("iosclipboard", "ios_clipboard_set_text", "vs", false);

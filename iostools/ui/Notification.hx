@@ -5,7 +5,7 @@ import cpp.Prime;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class IOSNotifications {
+class Notification {
 
     #if ios
     private static var ios_notifications_request_permission = Prime._load("iosnotifications", "ios_notifications_request_permission", "v", false);

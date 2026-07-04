@@ -5,7 +5,7 @@ import cpp.Lib;
 #end
 
 @:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
-class IOSFiles {
+class FileDialog {
     #if ios
     private static var ios_files_init = Lib.load("iosfiles", "ios_files_init", 2);
     private static var ios_files_pick_file = Lib.load("iosfiles", "ios_files_pick_file", 0);
