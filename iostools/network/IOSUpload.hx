@@ -4,6 +4,7 @@ package iostools.network;
 import cpp.Prime;
 #end
 
+@:buildXml('<include name="${haxelib:IOSTools}/project/Build.xml" />')
 class IOSUpload {
     #if ios
     private static var _uploadFile = Prime._prime("iostools_upload_file", "vss", false);
@@ -17,8 +18,6 @@ class IOSUpload {
     public static function uploadFile(url:String, filename:String):Void {
         #if ios
         _uploadFile(url, filename);
-        #else
-        trace("IOSUpload: Upload is only supported on iOS.");
-        #endif
+        #end
     }
 }
