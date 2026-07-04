@@ -1,4 +1,4 @@
-package iostools.network;
+package iostools;
 
 #if cpp
 import cpp.Prime;
