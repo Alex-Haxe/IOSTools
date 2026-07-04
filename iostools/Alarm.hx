@@ -1,4 +1,4 @@
-package iostools.ui;
+package iostools;
 
 #if cpp
 import cpp.Lib;
