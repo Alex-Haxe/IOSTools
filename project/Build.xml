@@ -2,7 +2,7 @@
   <files id="haxe">
 	<!-- ui -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSAlarms.mm" />
-	  <file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSAlert.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSAlert.mm" />
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSToast.mm" />
 	<file name="${haxelib:IOSTools}/dependencies/iostools/UI/IOSNotifications.mm" />
 	  
@@ -12,10 +12,14 @@
 
 	<!-- management -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSPermissions.mm" />
-	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSBrowser.mm" />
 	<file name="${haxelib:IOSTools}/dependencies/iostools/Management/IOSClipboard.mm" />
 
 	<!-- haptics -->
 	<file name="${haxelib:IOSTools}/dependencies/iostools/Haptics/IOSHaptics.mm" />
+
+	<!-- network -->
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Network/IOSBrowser.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Network/IOSDownloader.mm" />
+	<file name="${haxelib:IOSTools}/dependencies/iostools/Network/IOSUpload.mm" />
   </files>
 </xml>
