@@ -1,4 +1,4 @@
-package iostools;
+package iostools.system;
 
 #if cpp
 import cpp.Lib;
