@@ -7,5 +7,5 @@
 	
 	<haxelib name="lime" />
 	<haxelib name="openfl" />
-  <haxelib name="IOSTools" />
+    <haxelib name="IOSTools" />
 </project>
