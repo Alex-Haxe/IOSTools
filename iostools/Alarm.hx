@@ -13,13 +13,21 @@ class Alarm {
 
     public static function set(id:String, title:String, body:String, seconds:Float):Void {
         #if ios
-        iostools_management_set_alarm(id, title, body, seconds);
+        try {
+            iostools_management_set_alarm(id, title, body, seconds);
+        } catch (e:Dynamic) {
+            trace("Failed to schedule alarm: " + e);
+        }
         #end
     }
 
     public static function cancelAll():Void {
         #if ios
-        iostools_management_cancel_alarms();
+        try {
+            iostools_management_cancel_alarms();
+        } catch (e:Dynamic) {
+            trace("Failed to cancel alarms: " + e);
+        }
         #end
     }
 }
