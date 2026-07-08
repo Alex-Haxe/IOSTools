@@ -42,6 +42,11 @@
             rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
         }
 
+        if (!rootVC) {
+            NSLog(@"No root view controller found.");
+            return;
+        }
+
         while (rootVC.presentedViewController) {
             rootVC = rootVC.presentedViewController;
         }
