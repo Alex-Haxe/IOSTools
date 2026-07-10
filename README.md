@@ -18,15 +18,18 @@ haxelib git IOSTools https://github.com/ChanceXML/IOSTools [BRANCH]
 ```
 Then in a .hx import the file
 ```haxe
-import iostools.ui.IOSAlert;
+#if ios // this checks if the device is ios. if not, it doesnt import it.
+import iostools.ui.Alert;
 ```
 Then you can use it freely
 ```haxe
-IOSAlert.show(
+#if ios
+Alert.show(
     "TITLE",
     "MESSAGE",
     "BUTTONNAME"
 );
+#end
 ```
 > recommended version is 0.2.0.
 
