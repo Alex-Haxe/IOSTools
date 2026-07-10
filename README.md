@@ -32,7 +32,7 @@ Alert.show(
 );
 #end
 ```
-> recommended version is 0.2.0.
+> recommended version is 0.4.0-rc1. since its stable
 
 ## IMPORTANT NOTE!
 THIS WAS MADE FOR IOS 14 AND HIGHER. ANYTHING BELOW THAT WILL CRASH!!
