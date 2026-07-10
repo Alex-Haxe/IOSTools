@@ -20,6 +20,7 @@ Then in a .hx import the file
 ```haxe
 #if ios // this checks if the device is ios. if not, it doesnt import it.
 import iostools.ui.Alert;
+#end // the closing ios check
 ```
 Then you can use it freely
 ```haxe
