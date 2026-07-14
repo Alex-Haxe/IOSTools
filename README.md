@@ -32,7 +32,8 @@ Alert.show(
 );
 #end
 ```
-> recommended version is 0.4.0-rc1. since its stable
+> recommended version is 0.4.0-rc1. since its stable. just replace Alert. with IOSAlert.
+> Alert. is only for dev rn
 
 ## IMPORTANT NOTE!
 THIS WAS MADE FOR IOS 14 AND HIGHER. ANYTHING BELOW THAT WILL CRASH!!
