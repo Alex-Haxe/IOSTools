@@ -7,6 +7,8 @@ A simple, modular iOS utility library for haxelib/haxeflixel designed to make na
 
 It allows you to request permissions, pop up system alerts, and more!
 
+wait v0.5.0 is on development
+
 ![Example](art/example.png)
 
 ---
